@@ -11,7 +11,9 @@ LocationDataController wystawia endpoint, dzięki któremu użytkownik może dow
 ## Zadanie 2
 Kod pliku dockerfile, został ustawiony inny timezone dla obrazu niż tz użytkownikaS
 <br> ![Kod aplikacji odpowiedzialny za realizację punktu 1a-b](3.png)
-
+<br> linie 2-7 to etap budowania aplikacji, tj kopiowanie pliku pom.xml potrzebnego do budowania, katalogu src, pobranie zależności mavena, zbudowanie aplikacji z pominięciem testów
+<br> linie 9-20 to etap uruchamiania aplikacji, zostaje skopiowana aplikacja zbudowana w poprzednim etapie (.jar), deklaracja, że kontener nasłuchuje na porcie 8080, ustawienie TZ
+<br> zdefiniowanie healthchecka, uruchumienie aplikacji javowej, a na końcu jest zdefiniowane kto jest autorem
 ## Zadanie 3
 a) docker build -f Dockerfile -t sprawko:v2 .
 <br> -f pozwala określić nazwę pliku Dockerfile (domyślnie Dockerfile)
