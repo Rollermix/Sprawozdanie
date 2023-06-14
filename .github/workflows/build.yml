@@ -12,6 +12,12 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
+        
+      - name: Login to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
@@ -26,10 +32,7 @@ jobs:
           file: Dockerfile
           push: true
           platforms: linux/arm64/v8
-          tags: rollermix/sprawko:arm64v8
-        env:
-          DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
-          DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/sprawko:arm64v8
 
       - name: Build and push AMD64 image
         uses: docker/build-push-action@v2
@@ -38,7 +41,4 @@ jobs:
           file: Dockerfile
           push: true
           platforms: linux/amd64
-          tags: rollermix/sprawko:amd64
-        env:
-          DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
-          DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/sprawko:amd64
