@@ -14,5 +14,6 @@
 ![image](https://github.com/Rollermix/Sprawozdanie/assets/83765531/5d6b0243-5fce-4320-b212-fb4da1596754)
 ### Ustawienie QEMU i BUILDX
 <br>
+
 ![image](https://github.com/Rollermix/Sprawozdanie/assets/83765531/67ca1003-bab4-4e85-abd2-7814c0595af3)
 ### Budowanie, push obrazu, konfiguracja skąd ma się odbywać push i na jakie platformy oraz podanie secretów do repozytorium
