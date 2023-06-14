@@ -27,6 +27,9 @@ jobs:
           push: true
           platforms: linux/arm64/v8
           tags: rollermix/sprawko:arm64v8
+        env:
+          DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+          DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Build and push AMD64 image
         uses: docker/build-push-action@v2
@@ -36,3 +39,6 @@ jobs:
           push: true
           platforms: linux/amd64
           tags: rollermix/sprawko:amd64
+        env:
+          DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+          DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
