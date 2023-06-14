@@ -26,7 +26,7 @@ jobs:
           file: Dockerfile
           push: true
           platforms: linux/arm64/v8
-          tags: Rollermix/sprawko:arm64v8
+          tags: rollermix/sprawko:arm64v8
 
       - name: Build and push AMD64 image
         uses: docker/build-push-action@v2
@@ -35,4 +35,4 @@ jobs:
           file: Dockerfile
           push: true
           platforms: linux/amd64
-          tags: Rollermix/sprawko:amd64
+          tags: rollermix/sprawko:amd64
